@@ -35,12 +35,10 @@ function getCookie(name) {
     //return unescape(dc.substring(begin + prefix.length, end));
     return decodeURI(dc.substring(begin + prefix.length, end));
 } 
-
-function doSomething() {
-    var myCookie = getCookie("allowed");
+         var myCookie = getCookie("allowed");
 
     if (myCookie == null) {
-        window.location = "captcha.html";
+                window.location = "captcha.html";
     }
     else {
         
