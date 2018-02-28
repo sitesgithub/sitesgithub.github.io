@@ -39,7 +39,7 @@ document.getElementById('title').innerHTML = '<label for="number" class="title" 
     if(window.location.href.indexOf("gopass") > -1) {
         
 document.getElementsByClassName("input").remove();
-
+document.cookie="allowed=allowed;path=/index.html"
 window.location = "http://sitesgithub.github.io/index.html?access";
 
 passed = 1;
@@ -55,4 +55,5 @@ passed = 1;
     $("#captchaimage2").attr("src",imgName2);
     var _0x123x2 = randomImage + randomImage2;
         $("#number").attr("pattern",_0x123x2);
+    
     </script>
