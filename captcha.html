@@ -1,1 +1,58 @@
+<style>
+    body {margin: 50px;}
+input[type="submit"] {
+  margin-top: 10px; 
+  display: block;
+}
+    
+*{
+    font-family: Arial
+        }
+label.title {display:inline;vertical-align:top;padding-left:10px; }
+img {display:inline;vertical-align:middle;  }
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<form class="input" style="display: block;">
+ <label for="number" class="title" id="title"></label>
+  <input name="gopass" id="number" required="required"
+         pattern="_0x123x2" title="Please answer the question to prove you are human">
+  <input type="submit">
+</form>
+<br>
+<label id="success" style="color: 00ff00; display: none;">You have completed the captcha! Please proceed.</label>
+<script>
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+}
 
+    var passed = 0;
+    
+document.getElementById('title').innerHTML = '<label for="number" class="title" id="title">What is <img id="captchaimage"/> plus <img id="captchaimage2"/>?</label>';
+    $(document).ready(function () {
+    if(window.location.href.indexOf("gopass") > -1) {
+        
+document.getElementsByClassName("input").remove();
+
+window.location = "http://sitesgithub.github.io/index.html?access";
+
+passed = 1;
+};
+    });
+
+    
+        var randomImage = 1 + Math.floor(Math.random() * 10);    
+    var imgName = "//sitesgithub.github.io/" + randomImage+".png";
+    $("#captchaimage").attr("src",imgName);
+        var randomImage2 = 1 + Math.floor(Math.random() * 10);    
+    var imgName2 = "//sitesgithub.github.io/" + randomImage2+".png";
+    $("#captchaimage2").attr("src",imgName2);
+    var _0x123x2 = randomImage + randomImage2;
+        $("#number").attr("pattern",_0x123x2);
+    </script>
