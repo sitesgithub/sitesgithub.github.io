@@ -15,11 +15,37 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link href="/assets/css/style.css?v=f7df0920fb6ffc5d576d44f6cc0c68e98511e609" rel="stylesheet">
     <script>
-        if(window.location.href.indexOf("") > 0) {
-       window.location = "captcha.html";
-};
-                if(window.location.href.indexOf("access") > 0) {
-};
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    }
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+        end = dc.length;
+        }
+    }
+    // because unescape has been deprecated, replaced with decodeURI
+    //return unescape(dc.substring(begin + prefix.length, end));
+    return decodeURI(dc.substring(begin + prefix.length, end));
+} 
+
+function doSomething() {
+    var myCookie = getCookie("allowed");
+
+    if (myCookie == null) {
+        window.location = "captcha.html";
+    }
+    else {
+        
+    }
+}
     </script>
 </head>
   <body style="">
