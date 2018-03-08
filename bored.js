@@ -2412,7 +2412,7 @@
                 removeClass(this.container, "KICKASShidden");
             }
             getAppContainerElement().appendChild(this.container);
-            var adHTML = this.game.shouldShowAd() ? '<iframe src="' + GameGlobals.path('hello.html') + '" class="KICKASSELEMENT" id="kickass-hello-sunshine" style="display: none;></iframe>' : "";
+            var adHTML = this.game.shouldShowAd() ? '<iframe src="' + GameGlobals.path('hello.html') + '" class="KICKASSELEMENT" id="kickass-hello-sunshine" style="display: none;"></iframe>' : "";
             this.container.innerHTML = '<div id="kickass-howto-image" class="KICKASSELEMENT kickass-howto-invisible"></div>' + '<div id="kickass-pointstab" class="KICKASSELEMENT">' +
                 adHTML + '<div id="kickass-bomb-menu" class="KICKASSELEMENT KICKASShidden">' + '<ul id="kickass-bomb-list" class="KICKASSELEMENT">' + '</ul>' + '</div>' + '<div id="kickass-weapons-menu" class="KICKASSELEMENT KICKASShidden" style="display:none">' + '<ul id="kickass-weapons-list" class="KICKASSELEMENT">' + '</ul>' + '</div>' + '<div id="kickass-pointstab-wrapper" class="KICKASSELEMENT">' + '<div id="kickass-points" class="KICKASSELEMENT">' +
                 this.numPoints + '</div>' + '<div id="kickass-esctoquit" class="KICKASSELEMENT">Press esc to quit</div>' +
