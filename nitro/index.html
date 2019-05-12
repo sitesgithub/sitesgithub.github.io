@@ -1,0 +1,99 @@
+<html>
+<body>
+<style>
+  textarea {
+    background-color: #000;
+    border: 1px solid #000;
+    color: #00ff00;
+    padding: 8px;
+    font-family: courier new;
+}
+
+body {
+    background-color: #000;
+}
+
+input {
+    background-color: #000;
+    color: #00ff00;
+}
+
+button {
+	background-color:#000000;
+	cursor:pointer;
+	color:#00ff00;
+	font-family:Arial;
+	font-size:17px;
+	padding:7px 8px;
+	text-decoration:none;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+</style>
+<script>
+(function(){
+    var oldLog = console.log;
+    console.log = function (message) {
+        document.getElementById('a').value += message
+        oldLog.apply(console, arguments);
+    };
+})();
+
+</script>
+<textarea id="a" rows="11" cols="100" readonly>
+chrome@127.0.0.1: >cd ~/NitroGen
+chrome@127.0.0.1: >ls
+index.js node_modules  package.json  package-lock.json
+chrome@127.0.0.1: ~/NitroGen >node index.js
+―――――――――――――――――――――――――――――――――――――――
+[INFO] Discord Code Generator
+[INFO] Discord Codes will be here.
+[INFO] THIS DOES NOT CHECK CODES!
+―――――――――――――――――――――――――――――――――――――――
+
+</textarea>
+<p></p>
+<p style="font-family: Arial; color: #00ff00">How fast would you like it? (Type a number!)</p>
+<input type="text" id="speed">
+<p></p>
+<button onclick=generate()>
+  Start Generating!
+</button>
+<p></p>
+<button id='stop'>
+  Stop Generating!
+</button>
+<script>
+function generate() {
+const triesPerSecond = document.getElementById('speed').value //self explanatory
+
+getGiftCode = function () {
+    let code = '';
+    let dict = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    for(var i = 0; i < 16; i++){
+        code = code + dict.charAt(Math.floor(Math.random() * dict.length));
+    }
+    console.log('[GEN] http://discord.gift/' + code + "\n");
+} //generates codes
+
+getGiftCode();
+document.getElementById('stop').addEventListener("click", stop);
+function stop() {
+  clearInterval(gInterval);
+  clearInterval(interval)
+}
+var gInterval = setInterval(() => {getGiftCode();}, (1/triesPerSecond) * 1000);
+
+function scroll() {
+  document.getElementById("a").scrollTop = document.getElementById("a").scrollHeight
+};
+var interval = setInterval(scroll, 100)
+
+}
+
+</script>
+</body>
+</html>
