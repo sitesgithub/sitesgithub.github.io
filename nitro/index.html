@@ -95,7 +95,11 @@ button:active {
 <script>
 function generate() {
 var triesPerSecond = document.getElementById('speed').value //self explanatory
-triesPerSecond = 5
+if (triesPerSecond = null || 0) {
+  document.getElementById('speed').value = 5;
+} else {
+  var triesPerSecond = document.getElementById('speed').value;
+};
 
 getGiftCode = function () {
     let code = '';
