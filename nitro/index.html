@@ -77,7 +77,7 @@ button:active {
 </textarea>
 <p></p>
 <p style="font-family: Arial; color: #00ff00">How many codes do you want to generate per second? (5 is default)</p>
-<input type="text" id="speed">
+<input type="text" id="speed" value="5">
 <p></p>
 <button id='generate'>
   Start Generating!
@@ -95,12 +95,6 @@ button:active {
 <script>
 function generate() {
 var triesPerSecond = document.getElementById('speed').value //self explanatory
-if (triesPerSecond = null || 0) {
-  document.getElementById('speed').value = 5;
-} else {
-  var triesPerSecond = document.getElementById('speed').value;
-};
-
 getGiftCode = function () {
     let code = '';
     let dict = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
