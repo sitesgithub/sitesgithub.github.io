@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <head>
   <title>Respring</title>
-  <script>
-  function a() {
-    setTimeout(function(){document.getElementById('awaiting').innerText = "Respring has failed."; document.getElementById('awaiting').style.color = "red"}, 3000)
-  }
-  function isBookmarkLaunch(){return (window.navigator.standalone);}
-  if (isBookmarkLaunch()){
-  document.getElementById('hide').style.display = "none"
-  document.getElementById('hid').style.display = "none"
-  document.getElementById('hi').style.display = "none"
-  document.getElementById('awaiting').innerText = "Press the loader!"
-  document.getElementById('a').onclick = "a()"
-  } else {
-    document.getElementById('a').href = ""
-  }
-  </script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="Content-Language" content="en">
@@ -24,18 +9,19 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="white">
 		<link rel="apple-touch-icon-precomposed" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXnELsL2137x3nDpRdBpmAbR19C5PPJJkZFOffQtO_sapTR0xp">
   <style>
+
     .loader {
       position: absolute;
       left: 50%;
       top: 50%;
-      margin: -75px 0 0 -75px;
+      margin: -50px 0 0 -50px;
 
       border: 10px solid #f3f3f3;
       border-radius: 50%;
       border-top: 10px solid #044595;
       border-left: 10px solid #044595;
-      width: 120px;
-      height: 120px;
+      width: 70px;
+      height: 70px;
 
       -webkit-animation: spin 1s linear infinite;
     }
@@ -58,6 +44,7 @@
       0% { -webkit-transform: rotate(0deg); }
       100% { -webkit-transform: rotate(360deg); }
     }
+  
   </style>
 </head>
 <body style="margin:0;">
@@ -65,12 +52,27 @@
   <div class="loader" id="a" href="appleprintcenter://"></div>
 
   <div id="footer" class="credits">
-    <ul style="list-style: none;padding-left:0">
+    <ul style="list-style: none;padding-left:0;font-size">
       <li id="awaiting">To add the Respring button to your homescreen,</li>
       <li id="hide">Step 1: Press the arrow pointing up in at the bottom of the screen.</li>
       <li id="hid">Step 2: Press Add to Home Screen</li>
       <li id="hi">Congrats!</li>
     </ul>
   </div>
+  <script>
+  function a() {
+    setTimeout(function(){document.getElementById('awaiting').innerText = "Respring has failed."; document.getElementById('awaiting').style.color = "red"}, 3000)
+  }
+  function isBookmarkLaunch(){return (window.navigator.standalone);}
+  if (isBookmarkLaunch()){
+  document.getElementById('hide').style.display = "none"
+  document.getElementById('hid').style.display = "none"
+  document.getElementById('hi').style.display = "none"
+  document.getElementById('awaiting').innerText = "Press the loader!"
+  document.getElementById('a').onclick = "a()"
+  } else {
+    document.getElementById('a').href = ""
+  }
+  </script>
 </body>
 </html>
