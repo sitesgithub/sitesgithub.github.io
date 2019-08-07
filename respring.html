@@ -20,19 +20,6 @@
       -webkit-animation: spin 1s linear infinite;
     }
 
-    .info {
-      overflow: hidden;
-      position: fixed;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-
-      font-size: 45px;
-      font-family: sans-serif;
-
-      transform: translate(-50%, -50%);
-    }
-
     .credits {
       overflow: hidden;
       position: fixed;
@@ -56,12 +43,11 @@
 <body style="margin:0;">
   <script>
 function a() {
-console.log('running!')
-setTimeout(function(){document.getElementById('awaiting').innerText = "Respring has failed."}, 3000)
+setTimeout(function(){document.getElementById('awaiting').innerText = "Respring has failed."; document.getElementById('awaiting').style.color = "red"}, 3000)
 }
   </script>
 
-  <div id="loader" class="loader" href="appleprintcenter://" onclick="a()"></div>
+  <div class="loader" href="appleprintcenter://" onclick="a()"></div>
 
   <div id="footer" class="credits">
     <ul style="list-style: none;padding-left:0">
