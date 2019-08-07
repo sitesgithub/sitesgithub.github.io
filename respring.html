@@ -1,8 +1,77 @@
-<center>
-<a href="appleprintcenter://" id="a" onclick="b()" style="font-family: Arial;">respring</a>
-</center>
-<script>
-function b() {
-document.getElementById('a').click()
+<!DOCTYPE html>
+<html manifest="offline.manifest">
+<head>
+  <title>Respring</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin: -75px 0 0 -75px;
+
+      border: 10px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 10px solid #044595;
+      border-left: 10px solid #044595;
+      width: 120px;
+      height: 120px;
+
+      -webkit-animation: spin 1s linear infinite;
+    }
+
+    .info {
+      overflow: hidden;
+      position: fixed;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      font-size: 45px;
+      font-family: sans-serif;
+
+      transform: translate(-50%, -50%);
+    }
+
+    .credits {
+      overflow: hidden;
+      position: fixed;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+
+      font-size: 16px;
+      font-family: sans-serif;
+      text-align: center;
+
+      transform: translate(-50%, -90%);
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body style="margin:0;">
+  <script>
+function a() {
+console.log('running!')
+setTimeout(function(){document.getElementById('awaiting').innerText = "Respring has failed."}, 3000)
 }
-</script>
+  </script>
+
+  <div id="loader" class="loader" href="appleprintcenter://" onclick="a()"></div>
+
+  <div id="awaiting" class="info">
+    Press on the loader!
+  </div>
+
+  <div id="footer" class="credits">
+    <ul style="list-style: none;padding-left:0">
+      <li>Style ripped from HEN</li>
+      <li>CloudFTL for discovering the bug</li>
+    </ul>
+  </div>
+</body>
+</html>
