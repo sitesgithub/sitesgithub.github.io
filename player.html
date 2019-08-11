@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>Player</title></head>
+<body>
+<div id="video_player"></div><script type="text/javascript" src="https://content.jwplatform.com/libraries/0P4vdmeO.js">
+</script><style>
+body {
+            background-color: black;overflow-x: hidden; overflow-y: hidden;
+        }
+        
+.jwplayer.jw-flag-aspect-mode { height: 100%!important; }</style>
+<script type="text/javascript">
+if (window.location.href.includes('?link=')) {
+  var video = window.location.href.split('=')[1]
+} else {
+var video = prompt('What video would you like to play?')
+}
+var player = jwplayer("video_player");
+var config = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+    aspectratio: "16:9",
+    autostart: false,
+    controls: true,
+    primary: "html5",
+    abouttext: "Pokéflix",
+    aboutlink: "www.pokeflix.tv",
+    advertising: {
+        client: "vast",
+        offset: "pre",
+        tag: "",
+    },
+    skin: {
+        controlbar: {
+            "icons": "rgba(255,255,255,1.0)",
+            "iconsActive": "#bf1e2d",
+            "iconsactive": "#bf1e2d",
+        },
+        menus: {
+            "textActive": "#bf1e2d",
+            "textactive": "#bf1e2d"
+        },
+        tooltips: {
+            "text": "#bf1e2d"
+        }
+    },
+    sources: [{
+        "file": video,
+        "label": "0",
+        "type": "video/mp4"
+    }],
+    tracks: null,
+    logo: {
+        file: "https://www.pokeflix.tv/assets/images/logos/watermark.png",
+        link: "https://www.pokeflix.tv",
+        position: "bottom-right",
+    },
+    captions: {
+        color: "#ffffff",
+        fontSize: "14",
+        fontFamily: "Trebuchet MS, Sans Serif",
+        backgroundColor: "",
+    }
+};
+player.setup(config);
+</script>
+</body></html>
