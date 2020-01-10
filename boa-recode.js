@@ -39,8 +39,8 @@ if (!document.getElementById('BOAOuterGUI')) {
         return uid;
     };
     var BbsDjisdiuw6AWYgsd81a = BOAUIDMaker();
-    var iASUfg9823ag23h9807tg = BOAdecipher('4501012653736790394588537363768136624')
-    var guMnAUfiunpajIOmi2189 = iASUfg9823ag23h9807tg('0a0b0e0f0e0f0c080b0d090d0809070e0d070a0b06060b0d090d080d0908060f0d08080c0a')
+    var iASUfg9823ag23h9807tg = BOAdecipher('45010126537367903945117537363768136624')
+    var guMnAUfiunpajIOmi2189 = iASUfg9823ag23h9807tg('3d3c393839383b3f3c3a3e3a3f3e30393a303d3c38383e3c3a3e3a3f3a3e3f31383a3f3f3b3d')
 
     function BOAEncrypt() {
         var BOAUnencryptedMessage = document.getElementById('BOAUnencryptedMessage').value;
